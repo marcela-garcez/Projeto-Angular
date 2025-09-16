@@ -1,0 +1,32 @@
+<h2>Lista de Produtos</h2>
+
+<table>
+  <thead>
+    <tr class="Lista">
+      <th>ID</th>
+      <th>Nome</th>
+      <th>Preço</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (product of products(); track product.id) {
+      <tr>
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.price | currency:'BRL' }}</td>
+        <td>
+          <button class="btn-editar" (click)="onEdit(product)"><i class="fas fa-pencil-alt"></i></button>
+          <button class="btn-excluir"(click)="onDelete(product.id)"><i class="fas fa-trash-alt"></i></button>
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>
+
+<hr>
+
+<app-product-form
+  [product]="selectedProduct"
+  (productSaved)="onSave()"
+></app-product-form>

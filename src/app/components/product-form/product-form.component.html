@@ -1,0 +1,13 @@
+<h3 class="ListaP">{{ product ? 'Editar Produto' : 'Adicionar Novo Produto' }}</h3>
+<form (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name">Nome:</label>
+    <input id="name" type="text" [(ngModel)]="productForm.name" name="name" required>
+  </div>
+  <div>
+    <label for="price">Preço:</label>
+    <input id="price" type="number" [(ngModel)]="productForm.price" name="price" required>
+  </div>
+  <button type="submit">{{ product ? 'Salvar Alterações' : 'Adicionar' }}</button>
+  <button type="button" (click)="resetForm()">Limpar</button>
+</form>
