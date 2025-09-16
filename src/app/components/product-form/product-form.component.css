@@ -1,6 +1,15 @@
+.form-container {
+  padding: 25px;
+  background-color: #567ce6;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0. 1);
+  margin-top: 1px;
+  border: 1px solid #e0e0e0;
+}
+
 h3 {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
+  color: #0d0d0d;
   margin-bottom: 20px;
 }
 
@@ -10,7 +19,7 @@ div {
 
 label {
   font-weight: 600;
-  color: #555;
+  color: #090c10;
   margin-bottom: 5px;
   display: block;
 }
@@ -26,7 +35,7 @@ input {
 
 input:focus {
   outline: none;
-  border-color: #007bff;
+  border-color: #3db569;
 }
 
 button {

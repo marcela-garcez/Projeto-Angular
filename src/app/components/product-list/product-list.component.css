@@ -15,6 +15,11 @@ h2 {
     margin-bottom: 20px;
 }
 
+tr{
+  background-color: #cbcfff
+;
+}
+
 hr {
     border: none;
     border-top: 1px solid #e0e0e0;
@@ -24,7 +29,7 @@ hr {
 /* Estilos da Tabela */
 table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
     margin-bottom: 30px;
     background-color: #fff; /* Fundo branco para a tabela */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Sombra suave */
@@ -38,7 +43,9 @@ table thead tr.Lista { /* Seleciona a linha do cabeçalho */
     font-weight: 600;
     text-align: left;
 }
-
+th, td {
+  padding: 10px;
+}
 table th, table td {
     padding: 15px 20px;
     border-bottom: 1px solid #eef2f5; /* Linhas divisórias claras */
@@ -50,21 +57,6 @@ table td:first-child {
     border-bottom-left-radius: 8px;
 }
 
-table th:last-child,
-table td:last-child {
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
-}
-
-table tbody tr:last-child td {
-    border-bottom: none; /* Remove a borda da última linha */
-}
-
-table tbody tr:hover {
-    background-color: #f9fcff; /* Efeito hover suave */
-}
-
-/* Alinhamento para colunas específicas */
 table th:nth-child(1), table td:nth-child(1) { width: 5%; text-align: center; } /* ID */
 table th:nth-child(2), table td:nth-child(2) { width: 40%; } /* Nome */
 table th:nth-child(3), table td:nth-child(3) { width: 25%; text-align: right; } /* Preço */
@@ -89,7 +81,13 @@ table th:nth-child(4), table td:nth-child(4) { width: 30%; text-align: center; }
 }
 
 .btn-editar {
-    color: #28a745; /* Verde para editar */
+  background-color: #2deb0b; /* Vermelho */
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 20px; /* Mais arredondado */
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
 
 .btn-editar:hover {
@@ -98,89 +96,16 @@ table th:nth-child(4), table td:nth-child(4) { width: 30%; text-align: center; }
 }
 
 .btn-excluir {
-    color: #dc3545; /* Vermelho para excluir */
+    background-color: #f44336; /* Vermelho */
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 20px; /* Mais arredondado */
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
 
 .btn-excluir:hover {
     background-color: #ffe6e8; /* Fundo vermelho claro no hover */
     color: #a71d2a;
-}
-
-/* Substituindo o texto por ícones Font Awesome */
-/* Se você não quiser o texto "Editar" e "Excluir" aparecendo, */
-/* você precisará ajustar seu HTML para incluir os ícones diretamente, */
-/* como no meu exemplo anterior: <i class="fas fa-pencil-alt"></i> */
-/* ou escondê-los via CSS, mas a primeira opção é mais semântica. */
-
-/* Para esconder o texto dos botões se você *ainda* tiver <button>Editar</button> */
-/* e quiser usar somente os ícones definidos via pseudo-elementos, */
-/* você precisaria de um CSS mais complexo ou JavaScript para modificar o DOM. */
-/* A abordagem mais simples é mudar o HTML para já ter os ícones. */
-/* Assumindo que você vá mudar o HTML para: */
-/* <button class="btn-editar" (click)="onEdit(product)"><i class="fas fa-pencil-alt"></i></button> */
-/* <button class="btn-excluir"(click)="onDelete(product.id)"><i class="fas fa-trash-alt"></i></button> */
-
-/* Estilos para o formulário (app-product-form) - Apenas uma base */
-/* Você deve ter estilos específicos dentro do componente app-product-form */
-app-product-form {
-    display: block; /* Garante que o componente ocupe seu próprio espaço */
-    background-color: #fff;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-/* Exemplo de estilos básicos para inputs dentro do formulário */
-app-product-form .form-group {
-    margin-bottom: 15px;
-}
-
-app-product-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: 500;
-    color: #555;
-}
-
-app-product-form input[type="text"],
-app-product-form input[type="number"] {
-    width: calc(100% - 20px);
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1em;
-    box-sizing: border-box; /* Inclui padding e borda na largura total */
-}
-
-app-product-form .form-actions {
-    margin-top: 20px;
-    display: flex;
-    gap: 10px; /* Espaço entre os botões */
-}
-
-app-product-form .button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.2s ease;
-}
-
-app-product-form .button.primary {
-    background-color: #007bff; /* Azul primário */
-    color: white;
-}
-
-app-product-form .button.primary:hover {
-    background-color: #0056b3;
-}
-
-app-product-form .button.secondary {
-    background-color: #6c757d; /* Cinza secundário */
-    color: white;
-}
-
-app-product-form .button.secondary:hover {
-    background-color: #5a6268;
 }
